@@ -1,0 +1,8 @@
+display all record who joined in february-81 and getting comm. more than 400
+
+=> select * from employee where(hiredate > to_date('01-feb-1981') and hiredate < to_date('28-feb-1981')) and comm >400;
+
+
+display total no. of people who are not getting comm.
+
+==> select count(ename) from employee where comm = 0 or comm is NULL;
