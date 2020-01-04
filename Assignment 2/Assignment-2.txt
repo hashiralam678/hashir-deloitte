@@ -1,0 +1,9 @@
+Q. Write a Java Program for following requirements
+Take input from User for ID, Name, Showdate, Showtime, Status
+Create movie object and populate above details
+Store the object in an ArrayList
+Take input from user for ID and display the details in the movie object of that ID.
+- User Interface should be in class having main method
+- Storage should be in Data Access Object
+
+- Ensure proper coding standards, naming conventions, OOP concepts

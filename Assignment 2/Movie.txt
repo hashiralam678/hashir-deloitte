@@ -1,0 +1,152 @@
+package com.deloitte.assignment2;
+
+public class Movie {
+
+	private int id;
+	private String name;
+	private String showDate;
+	private String showTime;
+	private String status;
+	
+	public Movie() {
+		
+	}
+
+	public Movie(int id, String name, String showDate, String showTime, String status) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.showDate = showDate;
+		this.showTime = showTime;
+		this.status = status;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getShowDate() {
+		return showDate;
+	}
+
+	public void setShowDate(String showDate) {
+		this.showDate = showDate;
+	}
+
+	public String getShowTime() {
+		return showTime;
+	}
+
+	public void setShowTime(String showTime) {
+		this.showTime = showTime;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Movie Id=" + id + ", Name=" + name + ", ShowDate=" + showDate + ", ShowTime=" + showTime + ", Status="
+				+ status;
+	}
+	
+	
+}
+
+package com.deloitte.assignment2;
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class MovieTime {
+
+	public static void main(String[] args) {
+		
+		int Id;
+		String name,showtime,date,available;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		List<Movie> li= new ArrayList<>();
+		li.add(new Movie(1,"Jumanji","07-Oct-2019","6:00 PM","Available"));
+		li.add(new Movie(2,"Tarzan","08-Nov-2019","8:00 PM","Available"));
+		li.add(new Movie(3,"Frozen 2","10-Dec-2019","11:50 AM","Unavailable"));
+		li.add(new Movie(4,"Moana","01-Jan-2020","9:00 PM","Available"));
+		
+
+		System.out.println("Enter the Movie ID for Movie Details :");
+		int id = sc.nextInt();
+		
+		if(id==1)
+		{
+			System.out.println("Movie Details :");
+			
+			Movie m = li.get(0);
+			System.out.println(m);
+		}
+		else if(id==2)
+		{
+			System.out.println("Movie Details :");
+			
+			Movie m = li.get(1);
+			System.out.println(m);
+		}
+		else if(id==3)
+		{
+			System.out.println("Movie Details :");
+			
+			Movie m = li.get(2);
+			System.out.println(m);
+		}
+		else if(id==4)
+		{
+			System.out.println("Movie Details :");
+			
+			Movie m = li.get(3);
+			System.out.println(m);
+		}
+		else
+		{
+			System.out.println("Movie details not available \n");
+			System.out.println("Enter the Movie ID :");
+			Id=sc.nextInt();
+			System.out.println("Enter the Movie Name :");
+			name=sc.next();
+			System.out.println("Enter the Movie Date:");
+			date=sc.next();
+			System.out.println("Enter the Movie Show Time :");
+			showtime=sc.next();
+			System.out.println("Enter the Availability :");
+			available=sc.next();
+			
+			li.add(id-1,new Movie(Id,name,date,showtime,available));
+			System.out.println("Movie Details After Updating :");
+			Movie m = li.get(id-1);
+			System.out.println(m);
+		}
+		sc.close();
+
+	}
+
+}
