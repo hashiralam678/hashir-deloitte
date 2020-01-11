@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script>
+    var imgs = ["img6.jpg.jpg","img7.jpg.jpg","img8.jpg.jpg","img9.jpg.jpg"];
+    var counter = 0;
+
+$(document).ready(
+    function(){
+        $("#previousBtn").click(
+            function(){
+                previous();
+            }
+        );
+    }
+);
+
+$(document).ready(
+    function(){
+        $("#nextBtn").click(
+            function(){
+                next();
+            }
+        );
+    }
+);
+
+function next() {
+    if (counter==imgs.length-1) {
+        counter = 0;
+    } else {
+        counter++;
+    }
+    $("#image").attr("src",imgs[counter]);
+}
+function previous() {
+    if (counter==0) {
+        counter = imgs.length-1;
+    } else {
+        counter--;
+    }
+    $("#image").attr("src",imgs[counter]);
+}
+    </script>
+
+</head>
+<body>
+    <table border=2>
+        <tr>
+            <td colspan="2" align="center">
+                <img src="img6.jpg.jpg" alt="Error loading Image" id="image">
+            </td>
+        </tr>
+        <tr>
+            <td width = 50% align="center"><button type="button" id="previousBtn">Previous</button></td>
+            <td width = 50% align="center"><button type="button" id="nextBtn">Next</button></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

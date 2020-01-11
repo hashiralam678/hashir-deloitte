@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>Document</title>
+        </head>
+
+        <body>
+            <form action="submitted.html" onsubmit="return validate()">
+                Enter Name: <input type="text" id="t1" value="" onchange="val1()">
+                Enter Password: <input type="password" id="p1" value="" onchange="val1()">
+                <input type="submit" id="sub1" disabled>
+            </form>
+            <div id="d1" style="color:red">
+            </div>
+            <script>
+                function val1(){
+                    var t1=document.getElementById("t1");
+                    var p1=document.getElementById("p1");
+                    var x=true;
+                    if(t1.vale ==''){
+                        x=false;
+                    }
+                    if(p1.value=='')
+                    {
+                        x=false;
+                    }
+                    if(x){
+                        document.getElementById("sub1").disabled = false;
+
+                    }
+                }
+
+                function validate(){
+                    var t1=document.getElementById("t1");
+                    var p1=document.getElementById("p1");
+                    var d1=document.getElementById("d1");
+                    var x=true;
+                    if(t1.value==''){
+                        this.focus();
+                        this.style.border='1 solid red';
+                        d1.innerHTML="Enter Name";
+                        x= false;
+                    }
+                    if(p1.value==''){
+                        this.focus();
+                        this.style.border='1 Solid red';
+                        d1.innerHTML="Enter Password";
+                        x=false;
+                    }
+                    console.log("Validation done");
+                    return true;
+                    if(x){
+                        document.getElementById("sub1").disabled=false;
+                        console.log("Enabled");
+                    }
+                    return x;
+                }
+            </script>
+        </body>
+</html>
